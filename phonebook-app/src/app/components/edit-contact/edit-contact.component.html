@@ -1,0 +1,176 @@
+
+<form [formGroup]="contactForm" class="form">
+
+    <div class="row form-group">
+        <div class="col">
+      <label for="id">id:</label>
+     </div>
+  </div>
+     <div class="row form-group">
+      <div class="col">
+    <input formControlName="id" type="text" class="form-control" id="id" name="id"  />
+  </div>
+   </div>
+
+
+
+    <div class="row form-group">
+       <div class="col">
+     <label for="firstname">Firstname:</label>
+    </div>
+ </div>
+    <div class="row form-group">
+     <div class="col">
+   <input formControlName="firstname" type="text" class="form-control" id="firstname" name="firstname"  />
+ </div>
+  </div>
+  <div *ngIf="contactForm.controls['firstname'].dirty && contactForm.controls['firstname'].invalid " class="err">
+     <div *ngIf="contactForm.controls['firstname'].errors?.['required']">Firstname is mandatory</div>
+     <div *ngIf="contactForm.controls['firstname'].errors?.['minlength']">Firstname has min 5 letters</div>
+     <div *ngIf="contactForm.controls['firstname'].errors?.['maxlength']">Firstname should not be more than 10 letters</div>
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col">
+  <label for="lastname">lastname:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="lastname" type="text" class="form-control" id="lastname" name="lastname"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['lastname'].dirty && contactForm.controls['firstname'].invalid " class="err">
+  <div *ngIf="contactForm.controls['lastname'].errors?.['required']">lastname is mandatory</div>
+  <div *ngIf="contactForm.controls['lastname'].errors?.['minlength']">lastname has min 5 letters</div>
+  <div *ngIf="contactForm.controls['lastname'].errors?.['maxlength']">lastname should not be more than 10 letters</div>
+</div>
+
+
+
+<div class="row form-group">
+    <div class="col">
+  <label for="gender">Gender:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="gender" type="radio" id="gender" name="gender" value="Male" />Male
+<input formControlName="gender" type="radio" id="gender" name="gender" value="Female" />Female
+</div>
+</div>
+<div *ngIf="contactForm.controls['gender'].dirty && contactForm.controls['fgender'].invalid " class="err">
+  <div *ngIf="contactForm.controls['gender'].errors?.['required']">gender is mandatory</div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+  <label for="dob">Date of birth:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="dob" type="text" class="form-control" id="dob" name="dob"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['dob'].dirty && contactForm.controls['dob'].invalid " class="err">
+  <div *ngIf="contactForm.controls['dob'].errors?.['required']">dob is mandatory</div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+  <label for="email">Email:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="email" type="text" class="form-control" id="email" name="email"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['email'].dirty && contactForm.controls['email'].invalid " class="err">
+  <div *ngIf="contactForm.controls['email'].errors?.['required']">email is mandatory</div>
+</div>
+
+
+<div class="row form-group">
+    <div class="col">
+  <label for="phone">Phone:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="phone" type="text" class="form-control" id="phone" name="phone"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['phone'].dirty && contactForm.controls['phone'].invalid " class="err">
+  <div *ngIf="contactForm.controls['phone'].errors?.['required']">phone is mandatory</div>
+  <div *ngIf="contactForm.controls['phone'].errors?.['pattern']">Enter exactly 10 digits</div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+  <label for="city">City:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="city" type="text" class="form-control" id="city" name="city"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['city'].dirty && contactForm.controls['city'].invalid " class="err">
+  <div *ngIf="contactForm.controls['city'].errors?.['required']">city is mandatory</div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+  <label for="state">State:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="state" type="text" class="form-control" id="state" name="state"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['state'].dirty && contactForm.controls['state'].invalid " class="err">
+  <div *ngIf="contactForm.controls['state'].errors?.['required']">state is mandatory</div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+  <label for="country">Country:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="country" type="text" class="form-control" id="country" name="country"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['country'].dirty && contactForm.controls['country'].invalid " class="err">
+  <div *ngIf="contactForm.controls['country'].errors?.['required']">country is mandatory</div>
+</div>
+
+<div class="row form-group">
+    <div class="col">
+  <label for="picture">Picture:</label>
+ </div>
+</div>
+ <div class="row form-group">
+  <div class="col">
+<input formControlName="picture" type="text" class="form-control" id="picture" name="picture"  />
+</div>
+</div>
+<div *ngIf="contactForm.controls['picture'].dirty && contactForm.controls['picture'].invalid " class="err">
+  <div *ngIf="contactForm.controls['picture'].errors?.['required']">picture is mandatory</div>
+</div>
+
+ 
+  <div class="row form-group">
+   <div class="col">
+ <button [disabled]="contactForm.invalid" class="btn btn-{{contactForm.valid?'primary':'danger'}}" style="font-weight: 100;" (click)="SaveContact()">Save</button>
+ </div>
+ </div>
+ 
+ 
+ 
+ </form>

@@ -1,0 +1,9 @@
+<h3>List of All Contacts: {{contacts.length}}</h3>
+<app-contact-filter (onFilter)="filterContacts($event)"></app-contact-filter>
+<div *ngIf="contacts">
+<div class="list-group">
+    <div *ngFor="let c of contacts"class="list-group-item">
+      <app-contact-item [c]="c" (onParentEvt)="updateContacts($event)" ></app-contact-item>
+</div>
+</div>
+</div>
